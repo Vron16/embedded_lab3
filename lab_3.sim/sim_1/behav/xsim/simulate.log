@@ -1,0 +1,25 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Error: Send/Receive MISMATCH at time: 104252000 ps
+expected: 72
+received: 0
+Time: 104252 ns  Iteration: 2  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+Error: Send/Receive MISMATCH at time: 208508000 ps
+expected: 101
+received: 0
+Time: 208508 ns  Iteration: 2  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+Error: Send/Receive MISMATCH at time: 312764000 ps
+expected: 108
+received: 0
+Time: 312764 ns  Iteration: 2  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+Error: Send/Receive MISMATCH at time: 417020000 ps
+expected: 108
+received: 0
+Time: 417020 ns  Iteration: 2  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+Error: Send/Receive MISMATCH at time: 521276000 ps
+expected: 111
+received: 0
+Time: 521276 ns  Iteration: 2  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+Failure: End of testbench
+Time: 522276 ns  Iteration: 0  Process: /uart_tb/line__64  File: /home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd
+$finish called at time : 522276 ns : File "/home/user/embedded_lab3/lab_3.srcs/sources_1/imports/Downloads/uart_tb.vhd" Line 91

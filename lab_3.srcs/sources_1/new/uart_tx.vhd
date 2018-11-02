@@ -40,43 +40,45 @@ signal currstate : state := idle;
 signal count : std_logic_vector(2 downto 0) := (others => '0');
 signal chars : std_logic_vector(7 downto 0) := (others => '0');
 
+signal ready_sig, tx_sig : std_logic := '1';
+
+
 begin
 
+    ready <= ready_sig;
+    tx <= tx_sig;
+    
     process(clk) begin
         if (rising_edge(clk)) then
             if (rst = '1') then
                 currstate <= idle;
                 count <= (others => '0');
                 chars <= (others => '0');
-            else
+            elsif en = '1' then
                 case currstate is 
                     when idle =>
-                        if (send = '1' and en = '1') then
+                        if (send = '1') then
                             currstate <= start;
-                        else
-                            ready <= '1';
-                            tx <= '1';
                         end if;
                         
                     when start =>
-                        tx <= '0';
-                        ready <= '1';
+                        tx_sig <= '0';
+                        ready_sig <= '0';
                         chars <= char;
                         currstate <= transmit;
                     
                     when transmit =>
                         if (unsigned(count) < 7) then
-                            tx <= chars(to_integer(unsigned(count)));
-                            ready <= '0';
+                            tx_sig <= chars(to_integer(unsigned(count)));
                             count <= std_logic_vector(unsigned(count) + 1);
-                        elsif (unsigned(count) = 7) then
+                        else 
+                            tx_sig <= chars(to_integer(unsigned(count)));
                             currstate <= stop;
-                            ready <= '0';
                         end if;
               
                     when stop =>
-                        tx <= '1';
-                        ready <= '0';
+                        tx_sig <= '1';
+                        ready_sig <= '1';
                         count <= (others => '0');
                         chars <= (others => '0');
                         currstate <= idle;
