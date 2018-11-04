@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="85538363280fs"></ZoomStartTime>
-      <ZoomEndTime time="149738363281fs"></ZoomEndTime>
-      <Cursor1Time time="304038000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="21000000001fs"></ZoomEndTime>
+      <Cursor1Time time="8880000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="19" />
    <wvobject type="array" fp_name="/uart_tb/word">
       <obj_property name="ElementShortName">word[0:4][7:0]</obj_property>
       <obj_property name="ObjectShortName">word[0:4][7:0]</obj_property>
@@ -86,5 +86,14 @@
    <wvobject type="array" fp_name="/uart_tb/dut/r_x/d">
       <obj_property name="ElementShortName">d[7:0]</obj_property>
       <obj_property name="ObjectShortName">d[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_tb/dut/r_x/inshift">
+      <obj_property name="ElementShortName">inshift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inshift[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_tb/dut/t_x/chars">
+      <obj_property name="ElementShortName">chars[7:0]</obj_property>
+      <obj_property name="ObjectShortName">chars[7:0]</obj_property>
    </wvobject>
 </wave_config>

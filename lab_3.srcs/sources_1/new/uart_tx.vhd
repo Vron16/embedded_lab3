@@ -42,7 +42,6 @@ signal chars : std_logic_vector(7 downto 0) := (others => '0');
 
 signal ready_sig, tx_sig : std_logic := '1';
 
-
 begin
 
     ready <= ready_sig;
@@ -58,13 +57,13 @@ begin
                 case currstate is 
                     when idle =>
                         if (send = '1') then
+                            chars <= char;
                             currstate <= start;
                         end if;
                         
                     when start =>
                         tx_sig <= '0';
                         ready_sig <= '0';
-                        chars <= char;
                         currstate <= transmit;
                     
                     when transmit =>
