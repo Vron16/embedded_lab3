@@ -1,35 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 11/04/2018 07:11:05 PM
--- Design Name: 
--- Module Name: echo_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity echo_tb is
 --  Port ( );
@@ -49,9 +20,8 @@ component echo
     type str is array (0 to 4) of std_logic_vector(7 downto 0);
     signal word : str := (x"48", x"65", x"6C", x"6C", x"6F");
 
-    signal rst : std_logic := '0';
-    signal clk, en, send, rx, ready, tx, newChar : std_logic := '0';
-    signal charSend, charRec : std_logic_vector(7 downto 0) := (others => '0');
+    signal clk, en, send, rdy, newChar : std_logic := '0';
+    signal charIn, charOut : std_logic_vector(7 downto 0) := (others => '0');
 
 begin
 
@@ -60,13 +30,10 @@ begin
         clk => clk,
         en => en,
         send => send,
-        rx => tx,
-        rst => rst,
-        charSend => charSend,
-        ready => ready,
-        tx => tx,
+        charIn => charIn,
+        rdy => rdy,
         newChar => newChar,
-        charRec => charRec);
+        charOut => charOut);
 
 
     -- clock process @125 MHz
@@ -88,25 +55,25 @@ begin
     -- signal stimulation process
     process begin
 
-        rst <= '1';
-        wait for 100 ns;
-        rst <= '0';
-        wait for 100 ns;
 
         for index in 0 to 4 loop
-            wait until ready = '1' and en = '1';
-            charSend <= word(index);
-            send <= '1';
+            rdy <= '1';
+            wait until en = '1';
+            newChar <= '1';
+            charIn <= word(index);
+            rdy <= '0';
             wait for 200 ns;
-            charSend <= (others => '0');
-            send <= '0';
-            wait until ready = '1' and en = '1' and newChar = '1';
+            newChar <= '0';
+            charIn <= (others => '0');
+            rdy <= '1';
+            wait until send = '0' and en = '1';
+            wait until en = '1';
 
-            if charRec /= word(index) then
+            if charOut /= word(index) then
                 report "Send/Receive MISMATCH at time: " & time'image(now) &
                 lf & "expected: " &
                 integer'image(to_integer(unsigned(word(index)))) &
-                lf & "received: " & integer'image(to_integer(unsigned(charRec)))
+                lf & "received: " & integer'image(to_integer(unsigned(charOut)))
                 severity ERROR;
             end if;
 

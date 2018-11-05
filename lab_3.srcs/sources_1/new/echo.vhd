@@ -9,7 +9,7 @@ entity echo is
     port (
     clk,en,rdy,newChar : in std_logic;
     charIn : in std_logic_vector (7 downto 0);
-    send : out std_logic;
+    send : out std_logic := '0';
     charOut : out std_logic_vector (7 downto 0) 
 );
 end echo;
@@ -21,8 +21,7 @@ signal curr : state := idle;
 
 begin
     process(clk) begin
-            if (rising_edge(clk)) then
-                if (en = '1') then
+            if (rising_edge(clk)) and (en = '1') then
                 case curr is
                     when idle =>
                         if (newChar = '1') then
@@ -45,7 +44,6 @@ begin
                         
                     when others =>
                 end case;
-                end if;
             end if;
     end process;
 
