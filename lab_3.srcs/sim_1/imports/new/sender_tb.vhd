@@ -17,8 +17,8 @@ component sender
 end component;
 
 type vectorArray is array (0 to 4) of std_logic_vector (7 downto 0);
+signal NETID : vectorArray := (x"76",x"72",x"02",x"05",x"00");
 
-signal NETID : vectorArray := (std_logic_vector(to_unsigned(118, 8)), std_logic_vector(to_unsigned(114, 8)), std_logic_vector(to_unsigned(50, 8)), std_logic_vector(to_unsigned(53, 8)), std_logic_vector(to_unsigned(48, 8)));
 signal clk, en, btn, rdy, rst, send : std_logic := '0';
 signal char : std_logic_vector (7 downto 0) := (others => '0');
 begin
