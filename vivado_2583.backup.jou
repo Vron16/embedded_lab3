@@ -1,0 +1,164 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Nov  4 20:15:49 2018
+# Process ID: 2583
+# Current directory: /home/avin/Documents/embedded_lab3
+# Command line: vivado
+# Log file: /home/avin/Documents/embedded_lab3/vivado.log
+# Journal file: /home/avin/Documents/embedded_lab3/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/avin/Documents/embedded_lab3/lab_3.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top echo_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+save_wave_config {/home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 29
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 29
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 30
+restart
+run all
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 25
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 28
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 25
+run all
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 28
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 28
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 28
+run all
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 29
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 30
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 29
+restart
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 30
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 30
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 28
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 28
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 29
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 29
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 28
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 28
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+run all
+save_wave_config {/home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 42
+save_wave_config {/home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 42
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 43
+run all
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 28
+run all
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 28
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 43
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 43
+save_wave_config {/home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+add_bp {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} 42
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 43
+remove_bps -file {/home/avin/Documents/embedded_lab3/lab_3.srcs/sources_1/new/echo.vhd} -line 42
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim
+launch_simulation
+open_wave_config /home/avin/Documents/embedded_lab3/uart_tb_behav.wcfg
+source echo_tb.tcl
+close_sim

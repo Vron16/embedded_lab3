@@ -1,5 +1,25 @@
 Vivado Simulator 2018.2
 Time resolution is 1 ps
+Error: Send/Receive MISMATCH at time: 34744000 ps
+expected: 118
+received: 0
+Time: 34744 ns  Iteration: 1  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
+Error: Send/Receive MISMATCH at time: 69496000 ps
+expected: 114
+received: 118
+Time: 69496 ns  Iteration: 1  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
+Error: Send/Receive MISMATCH at time: 104248000 ps
+expected: 50
+received: 114
+Time: 104248 ns  Iteration: 1  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
+Error: Send/Receive MISMATCH at time: 139000000 ps
+expected: 53
+received: 50
+Time: 139 us  Iteration: 1  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
+Error: Send/Receive MISMATCH at time: 173752000 ps
+expected: 48
+received: 53
+Time: 173752 ns  Iteration: 1  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
 Failure: End of testbench
-Time: 174752 ns  Iteration: 0  Process: /echo_tb/line__56  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/new/echo_tb.vhd
-$finish called at time : 174752 ns : File "/home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/new/echo_tb.vhd" Line 83
+Time: 174752 ns  Iteration: 0  Process: /sender_tb/line__54  File: /home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
+$finish called at time : 174752 ns : File "/home/avin/Documents/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd" Line 78
