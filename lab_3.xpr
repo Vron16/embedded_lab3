@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="/home/avin/Documents/embedded_lab3/lab_3.xpr">
+<Project Version="7" Minor="38" Path="/home/user/embedded_lab3/lab_3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2c5416204d464916b30b217abbae60d7"/>

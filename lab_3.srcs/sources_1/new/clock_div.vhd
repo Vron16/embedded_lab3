@@ -25,7 +25,7 @@ begin
     begin
     -- takes as input a 125 MHz clock signal and divides it down to 2 Hz. Utilize a looping testbench to drive 125 million clock cycles on the input of the module and verify that the output produces two full clock cycles
     if (rising_edge(clk)) then
-        if (unsigned(counter) = 62500000) then
+        if (unsigned(counter) = 1085) then
             div <= '1';
             counter <= ((others => '0'));
         else
