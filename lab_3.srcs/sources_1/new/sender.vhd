@@ -56,7 +56,7 @@ begin
                         currSt <= busyC;
                     
                     when busyC =>
-                        if (rdy = '0' and btn = '1') then
+                        if (rdy = '1' and btn = '0') then
                             currSt <= idle;
                         end if;
                     
