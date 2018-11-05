@@ -21,7 +21,7 @@ type vectorArray is array (0 to 4) of std_logic_vector (7 downto 0);
 
 signal NETID : vectorArray := (std_logic_vector(to_unsigned(118, 8)), std_logic_vector(to_unsigned(114, 8)), std_logic_vector(to_unsigned(50, 8)), std_logic_vector(to_unsigned(53, 8)), std_logic_vector(to_unsigned(48, 8)));
 signal send_sig : std_logic := '0';
-signal char_sig : std_logic_vector := (others => '0');
+signal char_sig : std_logic_vector(7 downto 0) := (others => '0');
 signal i : std_logic_vector(7 downto 0) := (others => '0');
 signal currSt : state := idle;
 

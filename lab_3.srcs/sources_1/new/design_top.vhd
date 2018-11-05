@@ -13,6 +13,7 @@ port(
 );
 end design_top;
 
+
 architecture behavioral of design_top is
 
     signal dbnce : std_logic_vector(1 downto 0) := (others => '0');
