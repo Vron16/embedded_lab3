@@ -15,7 +15,9 @@ component sender
         char : out std_logic_vector (7 downto 0)
     );
 end component;
-
+signal NETID : vectorArray := (std_logic_vector(to_unsigned(118, 8)), std_logic_vector(to_unsigned(114, 8)), std_logic_vector(to_unsigned(50, 8)), std_logic_vector(to_unsigned(53, 8)), std_logic_vector(to_unsigned(48, 8)));
+signal clk, en, btn, rdy, rst, send : std_logic := '0';
+signal char : std_logic_vector (7 downto 0) := (others => '0');
 begin
    
     --mapping testbench to sender component
@@ -56,7 +58,20 @@ begin
             wait for 200 ns; --delay to substitute time needed for the uart in the actual design to transmit the char output
             wait until clk = '1'; -- uart updates on rising edge of clk
             rdy <= '1'; -- simulating uart is done
+            wait until send = '0' and en = '1';
+            wait until en = '1';
+            
+            if char /= NETID(index) then
+                report "Send/Receive MISMATCH at time: " & time'image(now) &
+                lf & "expected: " &
+                integer'image(to_integer(unsigned(word(index)))) &
+                lf & "received: " & integer'image(to_integer(unsigned(charOut)))
+                severity ERROR;
+            end if;
+
         end loop;
+        wait for 1000 ns;
+        report "End of testbench" severity FAILURE;
     end processs;
 end Behavioral;
             
