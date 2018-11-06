@@ -19,7 +19,7 @@ architecture Behavioral of sender is
 type state is (idle, busyA, busyB, busyC);
 type vectorArray is array (0 to 4) of std_logic_vector (7 downto 0);
 
-signal NETID : vectorArray := (x"76",x"72",x"02",x"05",x"00");
+signal NETID : vectorArray := (x"76",x"72",x"32",x"35",x"30");
 signal send_sig : std_logic := '0';
 signal char_sig : std_logic_vector(7 downto 0) := (others => '0');
 signal i : std_logic_vector(7 downto 0) := (others => '0');
