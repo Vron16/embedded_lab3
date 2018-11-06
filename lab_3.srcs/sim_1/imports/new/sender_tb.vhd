@@ -19,7 +19,8 @@ end component;
 type vectorArray is array (0 to 4) of std_logic_vector (7 downto 0);
 signal NETID : vectorArray := (x"76",x"72",x"02",x"05",x"00");
 
-signal clk, en, btn, rdy, rst, send : std_logic := '0';
+signal clk, en, btn,rst, send : std_logic := '0';
+signal rdy : std_logic := '1';
 signal char : std_logic_vector (7 downto 0) := (others => '0');
 begin
    
@@ -53,9 +54,9 @@ begin
     -- signal stimulation process
     process begin 
         for index in 0 to 4 loop
-            rdy <= '1';
             btn <= '1';
             wait until en = '1';
+            wait for 5 ns;
             rdy <= '0';
             btn <= '0';
             wait for 200 ns; --delay to substitute time needed for the uart in the actual design to transmit the char output

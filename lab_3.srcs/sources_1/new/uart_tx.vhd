@@ -33,7 +33,7 @@ entity uart_tx is
     );
 end uart_tx;
 
-architecture Behavioral of uart_tx is
+architecture fsm of uart_tx is
 
 type state is (idle, start, transmit, stop);
 signal currstate : state := idle;
@@ -89,4 +89,4 @@ begin
         end if;
    end process;
    
-end Behavioral;
+end fsm;
