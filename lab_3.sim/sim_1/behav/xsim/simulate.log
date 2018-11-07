@@ -1,6 +1,0 @@
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-Failure: End of testbench
-Time: 183440 ns  Iteration: 0  Process: /sender_tb/line__55  File: /home/user/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd
-$finish called at time : 183440 ns : File "/home/user/embedded_lab3/lab_3.srcs/sim_1/imports/new/sender_tb.vhd" Line 79
-.vhd" Line 91

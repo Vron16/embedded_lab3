@@ -59,6 +59,9 @@ begin
                         if (send = '1') then
                             chars <= char;
                             currstate <= start;
+                        else
+                            ready_sig <= '1';
+                            tx_sig <= '1';
                         end if;
                         
                     when start =>
@@ -77,7 +80,7 @@ begin
               
                     when stop =>
                         tx_sig <= '1';
-                        ready_sig <= '1';
+                        --ready_sig <= '1';
                         count <= (others => '0');
                         chars <= (others => '0');
                         currstate <= idle;
